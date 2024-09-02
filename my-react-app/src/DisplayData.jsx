@@ -3,7 +3,11 @@ import React, { useEffect, useState } from 'react'
 export default function DisplayData() {
 
     const [data,setData]= useState([]);
-  
+
+     const truncateText = React.useMemo(() => {
+        console.log("this is the calculating");
+      return text.slice(0, 30).concat('...');
+},[text]);
 
     useEffect(()=>{
 

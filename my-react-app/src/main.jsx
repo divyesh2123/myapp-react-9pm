@@ -5,9 +5,10 @@ import './index.css'
 import PDisplay from './Display.jsx'
 import Counter from './Counter.jsx'
 import DisplayData from './DisplayData.jsx'
+import { Registration } from './Registration.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <DisplayData />
+    <Registration />
   </StrictMode>,
 )
