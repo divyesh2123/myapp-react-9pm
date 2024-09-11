@@ -18,9 +18,22 @@ import DisplayGrid from './DisplayGrid.jsx'
 import HForm from './HForm.jsx'
 import CRUD from './CRUD.jsx'
 
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Account from './Account.jsx'
+import HLogin from './HLogin.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CRUD/>
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route path='/' element={<HLogin></HLogin>}></Route>
+        <Route path='/ac' element={<Account></Account>}></Route>
+
+      </Routes>
+    
+    </BrowserRouter>
+    
     
   </StrictMode>,
 )
