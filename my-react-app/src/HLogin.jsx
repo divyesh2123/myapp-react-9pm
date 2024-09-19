@@ -9,6 +9,8 @@ export default function HLogin() {
         password:""
     });
 
+    const [data,setData]= useState(null);
+
     const nav= useNavigate();
 
     const handle =(e)=>{
@@ -27,7 +29,7 @@ export default function HLogin() {
             nav("/ac");
         }).catch(y=>{
 
-        }).finally(y={
+        }).finally(y=>{
             
         })
 
@@ -35,6 +37,7 @@ export default function HLogin() {
     }
   return (
     <div>
+        {data.firstName}
         <form onSubmit={handlesubmit}>
 
             <input type='text' name="email" onChange={handle}/>

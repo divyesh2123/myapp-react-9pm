@@ -21,17 +21,25 @@ import CRUD from './CRUD.jsx'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Account from './Account.jsx'
 import HLogin from './HLogin.jsx'
+import Parent from './Parent.jsx'
+import ReadMore from './ReadMore.jsx'
+import ErrorBoundry from './ErrorBoundry.jsx'
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+    <ErrorBoundry>
 
       <Routes>
-
+        
         <Route path='/' element={<HLogin></HLogin>}></Route>
         <Route path='/ac' element={<Account></Account>}></Route>
-
+        <Route path='/parent' element={<Parent></Parent>}></Route>
+        <Route path='/readmore' element={<ReadMore text="This is the asfsdfsddddddddd sdfsdfsdf sdfsdfsdf sdfsdfsdfdsf dsfsdfsdF sdfsdFSDFSDF"></ReadMore>} />
+      
       </Routes>
-    
+      </ErrorBoundry>
     </BrowserRouter>
     
     

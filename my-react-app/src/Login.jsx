@@ -14,7 +14,7 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:4000/accounts/authenticate',{
+    fetch('accounts/authenticate',{
         method:'POST',
         body:JSON.stringify(form),
         headers:{

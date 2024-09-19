@@ -37,12 +37,43 @@ export default function DisplayGrid(props) {
   }
 
 ]
+  const p = React.useMemo(()=>{
+
+    return [
+      {
+        field: 'firstName',
+        headerName:"First Name"
+      },
+      {
+        field: 'lastName',
+        headerName:"Last Name" 
+      },
+      {
+        headerName : "",
+        field:'id',
+        width:300,
+        renderCell : (props)=>{
+    
+          console.log(props);
+    
+          return(<div>
+    
+            <Button onClick={()=>{editRow(props.row.id)}}  >Edit</Button>
+            <Button onClick={()=>{ removeArray(props.row.id)}}>Delete</Button>
+          
+          </div>)
+    
+        }
+      }
+    
+    ]
+  })
 
   console.log(data);
   return (
      <DataGrid
       rows={data}
-      columns={c}
+      columns={p}
      >DisplayGrid</DataGrid>
   )
 }
