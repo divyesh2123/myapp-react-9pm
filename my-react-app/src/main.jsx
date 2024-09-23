@@ -24,11 +24,18 @@ import HLogin from './HLogin.jsx'
 import Parent from './Parent.jsx'
 import ReadMore from './ReadMore.jsx'
 import ErrorBoundry from './ErrorBoundry.jsx'
+import MyCrud from './MyCrud.jsx'
+import Pat from './Pat.jsx'
+import { Provider } from 'react-redux'
+import store from './store/store.js'
+import CounterRedux from './CounterRedux.jsx'
+import UserRedux from './UserRedux.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+    <Provider store={store}>
     <ErrorBoundry>
 
       <Routes>
@@ -37,9 +44,15 @@ createRoot(document.getElementById('root')).render(
         <Route path='/ac' element={<Account></Account>}></Route>
         <Route path='/parent' element={<Parent></Parent>}></Route>
         <Route path='/readmore' element={<ReadMore text="This is the asfsdfsddddddddd sdfsdfsdf sdfsdfsdf sdfsdfsdfdsf dsfsdfsdF sdfsdFSDFSDF"></ReadMore>} />
-      
+        <Route path='/crud' element={<MyCrud></MyCrud>}></Route>
+        <Route path='/Pat' element={<Pat></Pat>}></Route>
+        <Route path='/redux' element={<CounterRedux></CounterRedux>}></Route>
+     
+        <Route path='/userRedux' element={<UserRedux></UserRedux>}/>
       </Routes>
       </ErrorBoundry>
+
+      </Provider>
     </BrowserRouter>
     
     
